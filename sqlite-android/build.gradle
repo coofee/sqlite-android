@@ -156,12 +156,12 @@ task downloadSqlite(type: Download) {
     dest 'src/main/jni/sqlite.zip'
 }
 
-//task installSqlite(dependsOn: downloadSqlite, type: Copy) {
-//    from zipTree(downloadSqlite.dest).matching {
-//        include '*/sqlite3.*'
-//        eachFile { it.setPath(it.getName()) }
-//    }
-//    into 'src/main/jni/sqlite'
-//}
+task installSqlite(dependsOn: downloadSqlite, type: Copy) {
+    from zipTree(downloadSqlite.dest).matching {
+        include '*/sqlite3.*'
+        eachFile { it.setPath(it.getName()) }
+    }
+    into 'src/main/jni/sqlite'
+}
 
-//preBuild.dependsOn installSqlite
+preBuild.dependsOn installSqlite
