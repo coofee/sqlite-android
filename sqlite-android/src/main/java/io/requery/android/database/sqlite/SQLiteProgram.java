@@ -17,8 +17,8 @@
 
 package io.requery.android.database.sqlite;
 
-import androidx.core.os.CancellationSignal;
-import androidx.sqlite.db.SupportSQLiteProgram;
+import android.arch.persistence.db.SupportSQLiteProgram;
+import android.support.v4.os.CancellationSignal;
 
 import java.util.Arrays;
 

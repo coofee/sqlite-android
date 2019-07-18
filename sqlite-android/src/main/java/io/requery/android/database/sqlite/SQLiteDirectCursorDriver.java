@@ -18,7 +18,7 @@
 package io.requery.android.database.sqlite;
 
 import android.database.Cursor;
-import androidx.core.os.CancellationSignal;
+import android.support.v4.os.CancellationSignal;
 
 /**
  * A cursor driver that uses the given query directly.

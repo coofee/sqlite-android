@@ -1,10 +1,13 @@
 package io.requery.android.database.sqlite;
 
+import android.arch.persistence.db.SupportSQLiteOpenHelper;
+import android.arch.persistence.db.SupportSQLiteOpenHelper.Callback;
+import android.arch.persistence.db.SupportSQLiteOpenHelper.Configuration;
 import android.content.Context;
-import androidx.sqlite.db.SupportSQLiteOpenHelper;
-import io.requery.android.database.DatabaseErrorHandler;
 
 import java.util.Collections;
+
+import io.requery.android.database.DatabaseErrorHandler;
 
 /**
  * Implements {@link SupportSQLiteOpenHelper.Factory} using the SQLite implementation shipped in

@@ -112,7 +112,7 @@ void throw_sqlite3_exception(JNIEnv* env, int errcode,
             exceptionClass = "android/database/sqlite/SQLiteDatatypeMismatchException";
             break;
         case SQLITE_INTERRUPT:
-            exceptionClass = "androidx/core/os/OperationCanceledException";
+            exceptionClass = "android/support/v4/os/OperationCanceledException";
             break;
         default:
             exceptionClass = "android/database/sqlite/SQLiteException";
@@ -126,7 +126,7 @@ void throw_sqlite3_exception(JNIEnv* env, int errcode,
 
     if (sqlite3Message) {
         char *zFullmsg = sqlite3_mprintf(
-            "%s (code %d)%s%s", sqlite3Message, errcode, 
+            "%s (code %d)%s%s", sqlite3Message, errcode,
             (message ? ": " : ""), (message ? message : "")
         );
         jniThrowException(env, exceptionClass, zFullmsg);
